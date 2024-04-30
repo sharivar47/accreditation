@@ -1,0 +1,37 @@
+.toggle-container {
+  display: inline-block;
+}
+
+.toggle-button {
+  position: relative;
+  width: 40px;
+  height: 16px;
+  border: 2px solid #7a7777;
+  border-radius: 10px;
+  background-color: #7a7777;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  top: 0px;
+  left: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.toggle-container.active .slider {
+  transform: translateX(20px);
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button.active {
+  background-color: #009643;
+  border: 2px solid #009643;
+}

@@ -1,0 +1,86 @@
+.main-panel {
+  background: #efefef;
+}
+.main-panel[data=blue] {
+  border-top: none;
+}
+.card {
+  background: #fdfdff;
+}
+.title-section {
+  border-bottom: 2px solid #0066b9;
+}
+@media (max-width: 457px) {
+  .title-section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+  .add-role-btn-container {
+    justify-content: center;
+    display: flex;
+  }
+}
+.delete-icon-quick {
+  font-size: 10px;
+}
+.label-user {
+  font-size: 12px;
+  font-weight: bold;
+}
+.user-info-value {
+  font-size: 14px;
+}
+.create-link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+}
+.create-link:hover {
+  color: #fff
+}
+.image-upload-container {
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  height: 100px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.image-uploaded {
+  height: 90px;
+  width: 90px;
+}
+.image-upload-tip {
+  color: red;
+  font-size: 10px;
+}
+.ql-editor {
+  text-align: right!important;
+}
+.error {
+  border: 1px solid red;
+}
+.back-text {
+  color: #FFFFFF;
+}
+.back-text:hover {
+  color: #FFFFFF;
+}
+.font-icon {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.color-Purple {
+  color: #a506d5;
+}
+.color-orange {
+  color: #f57d00;
+}
+.color-pink {
+  color: #ef3eaf;
+}
+.color-green {
+  color: #3ea23f;
+}

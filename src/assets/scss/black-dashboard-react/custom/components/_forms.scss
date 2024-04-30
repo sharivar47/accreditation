@@ -1,0 +1,228 @@
+/* Form controls */
+@include form-control-placeholder(#6c757c, 1);
+
+.form-wrapper {
+  border: 1px solid #eeeeee;
+  padding: 10px;
+  border-radius: 10px;
+}
+.form-header {
+  background: #eee;
+  padding: 8px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.form-control{
+  color: $dark;
+  border-color: $input-border;
+  border-radius: $border-radius-lg;
+  font-size: $font-size-sm;
+  @include transition-input-focus-color();
+
+
+  &:focus{
+    color: $dark;
+    border-color: $info;
+    background-color: $input-bg;
+    @include box-shadow(none);
+
+    & + .input-group-append .input-group-text,
+    & ~ .input-group-append .input-group-text,
+    & + .input-group-prepend .input-group-text,
+    & ~ .input-group-prepend .input-group-text{
+        border: 1px solid $info;
+        border-left: none;
+        background-color: $transparent-bg;
+    }
+  }
+
+  .has-success &,
+  .has-error &,
+  .has-success &:focus,
+  .has-error &:focus{
+      @include box-shadow(none);
+  }
+
+  .has-danger &,
+  .has-success &{
+      &.form-control-success,
+      &.form-control-danger{
+          background-image: none;
+      }
+  }
+
+  & + .form-control-feedback{
+      border-radius: $border-radius-lg;
+      margin-top: -7px;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      vertical-align: middle;
+  }
+
+  .open &{
+      border-radius: $border-radius-lg $border-radius-lg 0 0;
+      border-bottom-color: $transparent-bg;
+  }
+
+  & + .input-group-append .input-group-text,
+  & + .input-group-prepend .input-group-text{
+      background-color: $white;
+  }
+
+}
+
+.has-success .input-group-append .input-group-text,
+.has-success .input-group-prepend .input-group-text,
+.has-success .form-control{
+    border-color: lighten($black,5%);
+}
+
+.has-success .form-control:focus,
+.has-success.input-group-focus .input-group-append .input-group-text,
+.has-success.input-group-focus .input-group-prepend .input-group-text{
+  border-color: darken($success, 10%);
+}
+
+.has-danger .form-control,
+.has-danger .input-group-append .input-group-text,
+.has-danger .input-group-prepend .input-group-text,
+.has-danger.input-group-focus .input-group-prepend .input-group-text,
+.has-danger.input-group-focus .input-group-append .input-group-text{
+    border-color: lighten($danger-states,5%);
+    color: $danger-states;
+    background-color: rgba(222,222,222, .1);
+
+    &:focus{
+        background-color: $transparent-bg;
+    }
+}
+
+.has-success,
+.has-danger{
+    &:after{
+        font-family: 'nucleo';
+        content: "\ea1b";
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: 13px;
+        color: $success;
+        font-size: 11px;
+    }
+
+    &.form-control-lg{
+      &:after{
+        font-size: 13px;
+        top: 24px;
+      }
+    }
+
+    &.has-label{
+      &:after{
+        top: 37px;
+      }
+    }
+
+
+    &.form-check:after{
+      display: none !important;
+    }
+
+    &.form-check .form-check-label{
+      color: $success;
+    }
+}
+
+.has-danger{
+  &:after{
+    content: "\ea48";
+    color: $danger-states;
+  }
+
+  &.form-check .form-check-label{
+    color: $danger-states;
+  }
+}
+.form-error__message {
+  color: red;
+  padding: 5px 1px;
+  font-size: 12px;
+}
+.label-font {
+  font-size: 14px;
+}
+
+ .form-control::-webkit-input-placeholder {
+  color: #c2c2c2;
+}
+
+ .form-control::-moz-placeholder {
+   color: #c2c2c2;
+ }
+ .close-container-modal {
+   text-align: left;
+ }
+ //start style for datepicker
+ .rmdp-input {
+   display: block !important;
+   width: 100%;
+   height: calc(2.249999625rem + 2px) !important;
+   padding: 0.5rem 0.7rem !important;
+   font-weight: 400 !important;
+   line-height: 1.428571 !important;
+   color: rgba(255, 255, 255, 0.8) !important;
+   background-color: transparent !important;
+   background-clip: padding-box !important;
+   box-shadow: none !important;
+   color: #212529 !important;
+   border-color: #c0c0c0 !important;
+   border-radius: 0.4285rem !important;
+   font-size: 0.7500000025rem !important;
+   transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out !important;
+ }
+ .rmdp-container  {
+   width: 100%;
+ }
+.rmdp-input:before {
+  content: "\f133";
+}
+
+.datepicker-container {
+  position: relative;
+}
+
+.datepicker-container > i {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+
+.datepicker-container > input {
+  padding-left: 40px;
+}
+//end style for date picker
+
+.search-form-container {
+  border: 1px solid #d5d6d7;
+  border-radius: 10px;
+  padding: 10px;
+}
+.css-t3ipsp-control {
+  box-shadow: none!important;
+}
+select.form-control{
+   appearance: none;
+  background: url('../../../../img/dropdown-icon.png')no-repeat left center;
+  background-size: 12px;
+}
+::placeholder {
+  color: #cbcbcb;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: #cbcbcb;
+}
