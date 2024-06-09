@@ -78,13 +78,8 @@ const Grid = ({
         if (sortConfig.key === key && sortConfig.direction === 'asc') {
             direction = 'desc';
         }
-
         setSortConfig({ key, direction });
-
-        // Use lodash orderBy to sort the data
         const sortedData = _.orderBy(rows, [key], [direction]);
-
-        // Update the state with the sorted data
         sorted(sortedData);
     };
     return (
@@ -110,7 +105,7 @@ const Grid = ({
               </Table>
           </div>
            {withFooter && rows.length > 0 ? (
-               <div className="mt-5 row">
+               <div className="mt-4 mb-3 row">
                    <div className="col-12 col-md-6">
                        <Pagination
                        currentPage={currentPage}

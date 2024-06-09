@@ -22,7 +22,8 @@ const GridBody = ({rows, columns, checkable, checkChange, filterSelection, selec
                         </td> : ""}
                         <td>{r}</td>
                         {columns.map((column, index) => {
-                            let classSticky = 'fix-width'
+                            // let classSticky = 'fix-width'
+                            let classSticky = ''
                             switch (index) {
                                 case 0 :
                                     classSticky = 'sticky-col first-col';

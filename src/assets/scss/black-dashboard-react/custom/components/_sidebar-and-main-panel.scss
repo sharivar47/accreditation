@@ -185,7 +185,7 @@
       }
 
       &.active > a:not([data-toggle="collapse"]) {
-        background: #1b78ff;
+        background: $main-color4;
 
         i, p {
           color: white;
@@ -926,11 +926,12 @@ button.toggle {
 }
 
 .breadcrumb-container {
-  background: #d7d7d7;
+  background: #fdfdff;
   color: $dark;
-  border-radius: 0px 0px 3px 3px;
+  border-radius: 0.2857rem;
   font-size: 0.9rem;
   padding: 6px;
+  box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .breadcrumb-wrapper a {

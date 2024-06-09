@@ -10,7 +10,8 @@ const GridHeader = ({columns, checkable, checkAll, expandableRow, changeSort, so
         }} type="checkbox"/></label></th> : ""}
         <th>{Str.row}</th>
         {columns.map((item, index) => {
-            let classSticky = 'fix-width'
+            // let classSticky = 'fix-width'
+            let classSticky = ''
             switch (index) {
                 case 0 :
                     classSticky = 'sticky-col first-col';

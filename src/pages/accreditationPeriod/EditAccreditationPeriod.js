@@ -26,11 +26,22 @@ const EditAccreditationPeriod = () => {
     const {id} = useParams()
     useEffect(() => {
         getAccreditation()
+        getOrgType()
     }, [id])
     const getAccreditation = async () => {
         const result = await Api.get(ApiUrls.getAccreditation(id))
         if (result.success) {
-           setInit(result.data)
+            let startDate = null
+            if (result.data.startDate) {
+                const utcDateObject = new DateObject(result.data.startDate).convert(persian, persian_fa);
+                startDate = utcDateObject.format('YYYY/MM/DD');
+            }
+            let endDate = null
+            if (result.data.endDate) {
+                const utcDateObject = new DateObject(result.data.endDate).convert(persian, persian_fa);
+                endDate = utcDateObject.format('YYYY/MM/DD');
+            }
+           setInit({...result.data, startDate: startDate, endDate: endDate})
         }
     }
     const validationObj = Yup.object().shape({
@@ -62,9 +73,7 @@ const EditAccreditationPeriod = () => {
         sortOrder: Yup.number().typeError(Str.mustNumber).positive(Str.positiveNumber),
         orgTypeGUID: Yup.string()
     })
-    useEffect(() => {
-        getOrgType()
-    }, [])
+
     const getOrgType = async () => {
         const result = await Api.get(ApiUrls.getOrgType());
         if (result.success) {
@@ -86,7 +95,6 @@ const EditAccreditationPeriod = () => {
             endDate: endDate,
         })
         if (result.success) {
-            resetForm();
             MyAlert.success(Str.accreditationAdded)
         } else {
             MyAlert.error(result.data.title ?? Str.operationFail)
@@ -149,11 +157,8 @@ const EditAccreditationPeriod = () => {
                                  </div>
                                  <div className="row">
                                      <div className="col-12">
-                                         <button className="btn btn-info" onClick={() => handleSubmit()}>{Str.save}
+                                         <button className="btn btn-save" onClick={() => handleSubmit()}>{Str.save}
                                          </button>
-                                         <button className="btn btn-danger" onClick={() => {
-                                             resetForm()
-                                         }}>{Str.cleanForm}</button>
                                      </div>
                                  </div>
                              </form>)

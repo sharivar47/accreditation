@@ -3,6 +3,7 @@ import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar.js";
 import RTLNavbar from "./Navbar";
 import routes from "../../dev/routes";
+import MyBreadcrumb from "../ui/MyBreadcrumb";
 function Layout(props) {
   const location = useLocation();
   const mainPanelRef = React.useRef(null);
@@ -55,6 +56,7 @@ function Layout(props) {
               />
               <div className="main-panel" ref={mainPanelRef} >
                   <div id="content" className="content">
+                      <div className="breadcrumb-container mb-2"><MyBreadcrumb/></div>
                       <Routes>
                           {getRoutes(routes)}
                           <Route

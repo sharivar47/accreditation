@@ -82,7 +82,7 @@ const Dashboard = () => {
                                  </div>
                                  <div className="col-12 col-md-4 py-1">
                                      <MyLabel htmlFor="app" label="نرم افزار" isRequired={true}/>
-                                     <ReactSelect name="app" formik={props}/>
+                                     <ReactSelect options={[]} name="app" formik={props}/>
                                      <MyErrorForm errorFor="app" formik={props}/>
                                  </div>
                              </div>

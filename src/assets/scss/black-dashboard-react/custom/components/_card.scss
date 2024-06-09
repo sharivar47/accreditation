@@ -57,12 +57,14 @@
       }
     }
   .card-header-custom {
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 1px 1px 1px 1px #eee;
     border: 1px solid #eee;
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    color: #FFFFFF;
+    background: $main-color4;
   }
     .map{
         border-radius: $border-radius-sm;

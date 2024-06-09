@@ -1,5 +1,7 @@
 
 .table{
+  border-right: none;
+  border-left: none;
   > tbody > tr > td {
     color: rgb(59, 59, 59) !important;
     font-size: 0.8rem;

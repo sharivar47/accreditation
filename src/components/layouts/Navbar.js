@@ -14,16 +14,17 @@ import {
   Container,
   NavbarToggler, NavItem,
 } from "reactstrap";
+import {useDispatch} from "react-redux";
+import {setToken} from "../../dev/redux/userInfoSlice";
 
 function AdminNavbar(props) {
   const [collapseOpen, setcollapseOpen] = React.useState(false);
-
+  const dispatch = useDispatch();
   const toggleCollapse = () => {
     setcollapseOpen(!collapseOpen);
   };
   const logout = () => {
-    // dispatch(setAuthToken(""))
-    // dispatch(setExpireTime(""))
+    dispatch(setToken(""))
   }
   return (
     <>

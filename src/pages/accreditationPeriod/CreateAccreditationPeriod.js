@@ -21,7 +21,7 @@ import ApiUrls from "../../dev/service/ApiUrls";
 import {MyAlert} from "../../components/feature/MyAlert";
 
 const CreateAccreditationPeriod = () => {
-    const [orgTypes, setOrgType] = useState([]);
+    const [orgTypes, setOrgTypes] = useState([]);
     const init = {orgTypeGUID: "", title: "", startDate: "", endDate: "", isCurrent: false, sortOrder: ""};
 
     const validationObj = Yup.object().shape({
@@ -59,10 +59,10 @@ const CreateAccreditationPeriod = () => {
     const getOrgType = async () => {
         const result = await Api.get(ApiUrls.getOrgType());
         if (result.success) {
-            const orgTypes = result.data.map(item => {
+            const orgTypeList = result.data.map(item => {
                 return {label: item.title, value: item.guid}
             });
-            setOrgType(orgTypes)
+            setOrgTypes(orgTypeList)
         }
     }
     const save = async (model, {resetForm}) => {
@@ -140,9 +140,9 @@ const CreateAccreditationPeriod = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-12">
-                                        <button className="btn btn-info" onClick={() => handleSubmit()}>{Str.save}
+                                        <button className="btn btn-save" onClick={() => handleSubmit()}>{Str.save}
                                         </button>
-                                        <button className="btn btn-danger" onClick={() => {
+                                        <button className="btn btn-cancel mx-1" onClick={() => {
                                             resetForm()
                                         }}>{Str.cleanForm}</button>
                                     </div>
